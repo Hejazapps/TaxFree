@@ -1,0 +1,25 @@
+{
+    "data": [
+        {
+            "id": "01",
+            "en": "Sales Date",
+            "jp": "購入日"
+        },
+        {
+            "id": "02",
+            "en": "Publish Date",
+            "jp": "伝票発行日"
+        },
+        {
+            "id": "03",
+            "en": "Refund Date",
+            "jp": "還付日"
+        },
+        {
+            "id": "04",
+            "en": "Register Date",
+            "jp": "登録日"
+        }
+             ]
+}
+

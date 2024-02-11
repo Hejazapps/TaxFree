@@ -1,0 +1,28 @@
+PODS:
+  - Base64 (1.1.2)
+  - IQKeyboardManager (6.3.0)
+  - JWT (2.2.0):
+    - Base64 (~> 1.1.2)
+  - LGSideMenuController (2.1.1)
+
+DEPENDENCIES:
+  - IQKeyboardManager
+  - JWT
+  - LGSideMenuController
+
+SPEC REPOS:
+  trunk:
+    - Base64
+    - IQKeyboardManager
+    - JWT
+    - LGSideMenuController
+
+SPEC CHECKSUMS:
+  Base64: cecfb41a004124895a7bcee567a89bae5a89d49b
+  IQKeyboardManager: 2ca9d64893247556f53523dcd8d78641f0ba7c23
+  JWT: cf73c0ab0dac762df3de8a3f1164352089d97780
+  LGSideMenuController: ae40c80983ab8b8801c7cef0a6804d43aaa72d45
+
+PODFILE CHECKSUM: c8676b6574d4e9f685201b303b783eb94b6903ec
+
+COCOAPODS: 1.15.2

@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 0.5em;
+  font-weight: 500;
+  letter-spacing: 0em;
+}
+
+@page {
+  size:A4;
+  margin:20px 20px;
+  padding:0em;
+}
+
+
+body {
+  margin:20px 20px;
+  padding: 0em;
+  background: #fff;
+  float: left;
+}
+
+.header {
+  width: 100%;
+  position:relative;
+  margin-bottom:0.5em;	
+}
+
+.printTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+.printTable{
+    empty-cells:show;
+}
+.printTable tr{
+    
+}
+.printTable td {
+  padding: 0em 0.2em;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-line;
+  text-align:center;
+  line-height: 1em;
+  border-left: #000 0.1em solid;
+  border-top: #000 0.1em solid;
+}
+.printTable td:last-child{
+    border-right: #000 0.1em solid;
+}
+.printTable tr:last-child{
+    border-bottom: #000 0.1em solid;
+}
+.printTable .titleTd {
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border: none;
+}
+
+.printTable .headingTr,.printTable .headingTr2 {
+  font-weight: 500;
+  background: #d3d3d3;
+}
+
+
+.printTable .secondTr{
+  background: #ffffe0;
+}
+.printTable .col1 {
+  text-align: center;
+  width: 13%;
+}
+
+.printTable .col2 {
+  text-align: center;
+  width: 42%;
+}
+
+.printTable .col3 {
+  text-align: center;
+  width: 30%;
+}
+
+.printTable .col4 {
+  text-align: center;
+  width: 15%;
+}
+.printTable .col12 {
+  width: 100%;
+}
+
+.printTable .col5{
+  text-align: center;
+  width: 20%;
+}
+
+.noborder td{
+  border : none !important;
+  line-height:1.1em;
+}
+
+.noborder{
+  margin:0em auto;
+  width:100%
+}
+.center{
+	text-align:center;
+}
+.right{
+  text-align: right !important;
+}
+.left{
+    text-align:left !important;
+}
+.print_ul{
+  list-style: none;
+  margin: 0.1em 0em;
+  font-weight:500;
+}
+.print_ul li{
+  line-height: 1.3em;
+}
+.table1{
+    display:block;
+}
+.table0{
+    display:block;
+}
+.hidden{
+    display:none !important;
+}
+@media print{
+    
+    .break{
+        display:block ; page-break-after: auto; page-break-before:avoid;
+    }
+    .table0 , .table1{
+        display:block;
+        page-break-before:auto;
+        page-break-inside:avoid;
+        page-break-after:auto;
+    }
+ }

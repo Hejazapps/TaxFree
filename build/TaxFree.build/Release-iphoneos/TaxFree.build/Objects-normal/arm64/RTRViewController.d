@@ -1,0 +1,29 @@
+dependencies: \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/ViewControllers/ScanPassport/RTRViewController.m \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/ViewControllers/ScanPassport/RTRViewController.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Modules/module.modulemap \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTROutputStream.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTRTextLine.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTRTextCaptureServiceDelegate.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTRTextCaptureService.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTRImageCaptureServiceDelegate.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTRImageCaptureService.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTRExtendedSettings+Recognition.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTRExtendedSettings.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTRDataScheme.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTRDataField.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTRRecognitionServiceDelegate.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTRDataCaptureServiceDelegate.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTRRecognitionService.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTRDataCaptureService.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTRImagingCoreAPI.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTRRecognitionCoreAPI.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTRCoreAPI.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTREngine+Recognition.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTREngine+Imaging.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTRConstants.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTREngine+DataCapture.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTRDefinitions.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/RTREngine.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/libs/AbbyyRtrSDK.framework/Headers/AbbyyRtrSDK.h \
+  /Volumes/data/RH/TaxFree/TaxFree/TaxFree/ViewControllers/ScanPassport/RTRSelectedAreaView.h

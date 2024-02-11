@@ -1,0 +1,421 @@
+<html lang="en" >
+		
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+	<meta content="telephone=no" name="format-detection">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	
+	<title>Printable report layout</title>
+	<link rel="stylesheet" href="style.css">
+		<script type="text/javascript" src="jquery-2.0.3.min.js"></script>
+</head>
+
+<body>
+	<div class="report_templete" style="display:none;">
+		<div class="table0">
+			<div class="header">
+				<p class="center" style="font-size:20em;font-weight:bold;letter-spacing:0.6em;">輸  出  免  税  物  品  購  入  記  録  票</p>
+				<p class="center">Record of Purchase of Consumption Tax-Exempt for Export</p>
+                <table class="noborder" style="width:100%;position:absolute;top:0.1em;left:0em">
+					<tr>
+                        <td class="titleTd " rowspan="2"><a style="padding:0.3em 0.3em;border:0.1em solid;font-size:20em">パスポート添付用</a></td>
+						<td class="titleTd right">伝票番号 : </td>
+						<td class="titleTd left edit" style="width:8em;" name="SlipNo"></td>
+					</tr>
+					<tr>
+						<td class="titleTd right">Ref.No. &nbsp;&nbsp;</td>
+						<td class="titleTd left edit" style="width:8em;"></td>
+					</tr>
+					
+				</table>
+			</div>
+			<div style="clear:both"></div>
+            <div class="" style="margin-bottom:0.5em">
+				<p>本邦から出国する際又は居住者となる際に、その出港地を所轄する税関⾧又はその住所若しくは居所の所在地を所轄する税務署⾧に購入記録票を提出しなければならない</p>
+				<p>When departing Japan, or if becoming a resident of Japan, you are required to submit your ”Record of Purchase Card” to either the Director of Customs that has jurisdiction over your departure location or the head of the tax office that has jurisdiction over your place of residence or address</p>
+			</div>
+			<div>
+				<table class="printTable">
+					<tr class="headingTr">
+						<td class="col5" >所 轄 税 務 署</td>
+						<td class="col5" >納 税 地</td>
+						<td class="col5" >販売場所在地</td>
+						<td class="" colspan="2" style="width:40%">販売者氏名</td>
+					</tr>
+					<tr class="headingTr2">
+						<td class="col5">Tax office concerned</td>
+						<td class="col5">Place for Tax Payment</td>
+						<td class="col5">Selling Place</td>
+						<td class="" colspan="2" style="width:40%">Seller's Name</td>
+					</tr>
+					<tr>
+						<td class="edit" name="Seller_Info.TaxOffice"></td>
+						<td class="edit" name="Seller_Info.SellerAddr"></td>
+						<td class="edit" name="Seller_Info.TaxPlace"></td>
+						<td class="edit" name="Seller_Info.Seller" colspan="2"></td>
+					</tr>
+
+					<tr class="headingTr">
+						<td>旅券等の種類</td>
+						<td>番号</td>
+						<td>国籍</td>
+						<td>購入年月日</td>
+						<td>購入者氏名(活字体)</td>
+					</tr>
+					<tr class="headingTr2">
+						<td>Passport etc.</td>
+						<td>No.</td>
+						<td>Nationality</td>
+						<td>Date of Purchase</td>
+						<td>Name in Full(in block ｌ etters)</td>
+					</tr>
+					<tr>
+						<td class="edit" name="User_Info.PassportType"></td>
+						<td class="edit" name="User_Info.PassportNo"></td>
+						<td class="edit" name="User_Info.National"></td>
+						<td class="edit date" name="User_Info.SaleDate"></td>
+						<td class="edit" name="User_Info.Name"></td>
+					</tr>
+					
+					<tr class="headingTr">
+						<td colspan="2">上陸年月日</td>
+						<td colspan="2">在留資格</td>
+						<td>生年月日</td>
+					</tr>
+					<tr class="headingTr2">
+						<td colspan="2">Date of Landing</td>
+						<td colspan="2">Status of Residence</td>
+						<td>Date of Birth of Purchaser</td>
+					</tr>
+					<tr>
+						<td class="edit date" colspan="2" name="User_Info.LandingDate"></td>
+						<td class="edit" colspan="2" name="User_Info.Residence"></td>
+						<td class="edit date" name="User_Info.Birth"></td>
+					</tr>
+
+					<tr class="secondTr consum_head">
+						<td colspan="2">消耗品／Consumable Commodities</td>
+						<td>単価</td>
+						<td>数量</td>
+						<td>数量</td>
+					</tr>
+					<tr class="secondTr consum_head">
+						<td colspan="2">品名／Name of Commodity</td>
+						<td>Unit Price</td>
+						<td>Quantity</td>
+						<td>Price</td>
+					</tr>
+					<tr class="consum_total">
+						<td colspan="2">消耗品合計金額／Total Amount</td>
+						<td>-</td>
+						<td>-</td>
+						<td class="right edit" name="Consum_Info.total.price"></td>
+					</tr>
+
+					<tr class="secondTr goods_head">
+						<td colspan="2">一般物品／Non Consumable Commodities</td>
+						<td>単価</td>
+						<td>数量</td>
+						<td>数量</td>
+					</tr>
+					<tr class="secondTr goods_head">
+						<td colspan="2">品名／Name of Commodity</td>
+						<td>Unit Price</td>
+						<td>Quantity</td>
+						<td>Price</td>
+					</tr>
+					
+					<tr class="goods_total">
+						<td colspan="2">一般物品合計金額／Total Amount</td>
+						<td>-</td>
+						<td>-</td>
+						<td class="right edit" name="Goods_Info.total.price"></td>
+					</tr>
+					<tr>
+						<td colspan="2" style="background:#d3d3d3">総合計金額／Total Amount</td>
+						<td>-</td>
+						<td>-</td>
+						<td class="right edit" name="Total_Price"></td>
+					</tr>
+				</table>
+                <div style="clear:both;width:100%;border:#000 0.1em solid;margin-top:1em;margin-bottom:0.8em;"></div>
+				<div>
+					<ul class="print_ul">
+						<li>① 本邦から出国する際又は居住者となる際に、その出港地を所轄する税関⾧又はその住所若しくは居所の所在地を所轄する税務署⾧に購入記録票を提出しなければなりません。</li>
+						<li>② 本邦から出国するまでは購入記録票を旅券等から切り離してはいけません。</li>
+						<li>③ 免税で購入した物品を本邦からの出国の際に所持していなかった場合には、その購入した物品について免除された消費税額（地方消費税を含む。）に相当する額を徴収されます。</li>
+						<li>④ ③の場合において、災害その他やむを得ない事情により免税で購入した物品を亡失したため輸出しないことにつき税関⾧の承認を受けたとき、 又は既に輸出したことを証する書類を出港地を所轄する税関⾧に提出したときは、消費税額（地方消費税を含む。）に相当する額を徴収されません。</li>
+					</ul>
+
+					<ul class="print_ul desc_Info" style="margin-top: 0.8em;">
+					</ul>
+				</div>
+				<div class="" style="clear:both;width:100%;border:0.1em solid black;margin-top:1.1em;margin-bottom:0.6em;"></div>
+			</div>
+		</div>	
+		
+		<!-- Next Page-->
+		<div class="table1">
+			<div class="header">
+				<p class="center" style="font-size:20em;font-weight:bold;letter-spacing:0em;">最終的に輸出となる物品の消費税免税購入についての購入者誓約書</p>
+				<p class="center">Convenant of Purchaser of Consumption Tax-Exempt of Ultimate Export</p>
+                <table class="noborder" style="width:100%;position:absolute;top:0.1em;left:0em">
+					<tr>
+                        <td class="titleTd " rowspan=2><a style="padding:0.3em 1.5em;border:0.1em solid;font-size:2em">店舗控用</a></td>
+						<td class="titleTd right">伝票番号 : </td>
+						<td class="titleTd left edit" style="width:8em;" name="SlipNo"></td>
+					</tr>
+					<tr>
+						<td class="titleTd right">Ref.No. &nbsp;&nbsp;</td>
+						<td class="titleTd left" style="width:8em;"></td>
+					</tr>
+				</table>
+			</div>
+			<div style="clear:both"></div>
+			<div>
+				<table class="printTable">
+					<tr>
+						<td style="width:80%;line-height:0.2em" colspan="4" rowspan="3">
+                            <table class="noborder" style="width:100%;">
+                                <tr>
+                                    <td colspan="2" style="padding: 0 1em;text-align:left;line-height:1em">
+                                        ・当該消耗品を、購入した日 から30日以内に輸出されるものとして購入し、日本で処分しないことを誓約します。
+                                        I certify that the goods listed as “consumable commodities ” on this card were purchased by me for export from Japan within 30days from the purchase date and will not be disposed of within Japan.
+                                        ・当該一般物品を、日本から最終的には輸出されるものとして購入し、日本で処分しないことを誓約します。
+                                        I certify that the goods listed as “commodities except consumables ” on this card were purchased by me for ultimate export from Japan and will not be disposed of within Japan.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="right" style="width:40%">
+                                        署名
+                                    </td>
+                                    <td rowspan="2" class="left" style="width:60%">
+                                        <img class="sign_img" style="height: 2.5em;width: 8em;" src=""/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="right" style="width:40%">Signature</td>
+                                </tr>
+                            </table>
+						</td>
+						<td class="col5" style="background:#d3d3d3;">販売者氏名</td>
+					</tr>
+					<tr class="headingTr2">
+						<td class="col5">Seller's Name</td>
+					</tr>
+					<tr>
+						<td class="col5 edit" name="Seller_Info.Seller"></td>
+					</tr>
+				
+	
+					<tr class="headingTr">
+						<td>旅券等の種類</td>
+						<td>番号</td>
+						<td>国籍</td>
+						<td>購入年月日</td>
+						<td>購入者氏名(活字体)</td>
+					</tr>
+					<tr class="headingTr2">
+						<td>Passport etc.</td>
+						<td>No.</td>
+						<td>Nationality</td>
+						<td>Date of Purchase</td>
+						<td>Name in Full(in block ｌ etters)</td>
+					</tr>
+					<tr>
+						<td class="edit" name="User_Info.PassportType"></td>
+						<td class="edit" name="User_Info.PassportNo"></td>
+						<td class="edit" name="User_Info.National"></td>
+						<td class="edit date" name="User_Info.SaleDate"></td>
+						<td class="edit" name="User_Info.Name"></td>
+					</tr>
+					
+					<tr class="headingTr">
+						<td colspan="2">上陸年月日</td>
+						<td colspan="2">在留資格</td>
+						<td>生年月日</td>
+					</tr>
+					<tr class="headingTr2">
+						<td colspan="2">Date of Landing</td>
+						<td colspan="2">Status of Residence</td>
+						<td>Date of Birth of Purchaser</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="edit date" name="User_Info.LandingDate"></td>
+						<td colspan="2" class="edit" name="User_Info.Residence">短期滞在</td>
+						<td class="edit date" name="User_Info.Birth"></td>
+					</tr>
+	
+					<tr class="secondTr consum_head">
+						<td colspan="2">消耗品／Consumable Commodities</td>
+						<td>単価</td>
+						<td>数量</td>
+						<td>数量</td>
+					</tr>
+					<tr class="secondTr consum_head">
+						<td colspan="2">品名／Name of Commodity</td>
+						<td>Unit Price</td>
+						<td>Quantity</td>
+						<td>Price</td>
+					</tr>
+					<tr class="consum_total">
+						<td colspan="2">消耗品合計金額／Total Amount</td>
+						<td>-</td>
+						<td>-</td>
+						<td class="right edit" name="Consum_Info.total.price"></td>
+					</tr>
+	
+					<tr class="secondTr goods_head">
+						<td colspan="2">一般物品／Non Consumable Commodities</td>
+						<td>単価</td>
+						<td>数量</td>
+						<td>数量</td>
+					</tr>
+					<tr class="secondTr goods_head">
+						<td colspan="2">品名／Name of Commodity</td>
+						<td>Unit Price</td>
+						<td>Quantity</td>
+						<td>Price</td>
+					</tr>
+					<tr class="goods_total">
+						<td colspan="2">一般物品合計金額／Total Amount</td>
+						<td>-</td>
+						<td>-</td>
+						<td class="right edit" name="Goods_Info.total.price"></td>
+					</tr>
+	
+					<tr>
+						<td colspan="2" style="background:#d3d3d3">総合計金額／Total Amount</td>
+						<td>-</td>
+						<td>-</td>
+						<td class="right edit" name="Total_Price"></td>
+					</tr>
+				</table>
+			</div>	
+		</div>
+	</div>
+	<div class="content"></div>
+</body>
+</html>
+		
+
+<script>
+    var json_list = ReplaceText;
+    //var html_list = new Array(json_list.data_list.length);
+    var min_row_count = 1;
+	$(function (e) {
+        for(var json_i = 0 ; json_i < json_list.data_list.length ; json_i++){
+            setHtml(json_i);                                                                                                                        
+        }
+	});
+
+	function setHtml(index){
+        var temp_json = json_list.data_list[index];
+        
+        var consum_count = Math.max(temp_json.Consum_Info.list.length,min_row_count);
+        var goods_count = Math.max(temp_json.Goods_Info.list.length,min_row_count);
+        var total_row_count = (consum_count + goods_count);
+        	
+        var goods_add_count = 0;
+        var consum_add_count = 0;
+        
+        if(total_row_count > 8 && total_row_count < 14){
+            var add_count = 14 - total_row_count;
+            
+            var sub_count = Math.floor((add_count - Math.abs(goods_count - consum_count))/2);
+            if(goods_count > consum_count){
+                consum_add_count = sub_count; goods_add_count = add_count - sub_count;
+            }else{
+                goods_add_count = sub_count; consum_add_count = add_count - sub_count;
+            }            
+        }
+        
+        if(temp_json.Sign_Image == "" || temp_json.Sign_Image == undefined){
+            $(".report_templete .sign_img").addClass("hidden");
+        }else{
+            $(".report_templete .sign_img").attr("src" , "data:image/png;base64,"+temp_json.Sign_Image);
+        }
+        
+        for(var i = 0 ; i < 2 ; i++){
+            var obj_list = $(".report_templete .table"+i+" .edit");
+            for(var j = 0 ; j < obj_list.length ; j++){
+                var obj = obj_list[j];
+                var keyName = $(obj).attr("name");
+                var value = "";
+                try{
+                    value = eval("temp_json."+keyName) || "";
+                }catch{
+                    value= "";
+                }
+                
+                if($(obj).hasClass("date")){
+                    value = value + "<br>Month Date Year";
+                }
+                $(obj).html(value);
+            }
+            
+            var temp_consum_list = temp_json.Consum_Info.list;
+            if(temp_consum_list.length == 0){
+                $(".report_templete .table"+i+" .consum_total").addClass("hidden");
+                $(".report_templete .table"+i+" .consum_head").addClass("hidden");
+            }else{
+                var row_count = Math.max(temp_consum_list.length , min_row_count) + consum_add_count;
+                for(var ii = 0 ; ii < row_count ; ii++){
+                    var item = new Object();
+                    if(ii < temp_consum_list.length){
+                        item = temp_consum_list[ii];
+                    }
+                    
+                    var item_html = "<tr class='inserted'><td class='edit' colspan='2'>"+(item.name || "")+"</td>"
+                    +"<td class='right edit'>"+(item.unit || " ")+"</td>"
+                    +"<td class='right edit'>"+(item.qty || " ")+"</td>"
+                    +"<td class='right edit'>"+(item.price || "0")+"</td></tr>";
+                    
+                    $(item_html).insertBefore(".report_templete .table"+i+" .consum_total");
+                }
+            }
+            
+            
+            
+            
+            var temp_goods_list = temp_json.Goods_Info.list;
+            if(temp_goods_list.length == 0){
+                $(".report_templete .table"+i+" .goods_total").addClass("hidden");
+                $(".report_templete .table"+i+" .goods_head").addClass("hidden");
+            }else{
+                row_count = Math.max(temp_goods_list.length , min_row_count) + goods_add_count;
+                for(var ii = 0 ; ii < row_count ; ii++){
+                    var item = new Object();
+                    if(ii < temp_goods_list.length){
+                        item = temp_goods_list[ii];
+                    }
+                    
+                    var item_html = "<tr class='inserted'><td class='edit' colspan='2'>"+(item.name || "")+"</td>"
+                    +"<td class='right edit'>"+(item.unit || " ")+"</td>"
+                    +"<td class='right edit'>"+(item.qty || " ")+"</td>"
+                    +"<td class='right edit'>"+(item.price || "0")+"</td></tr>";
+                    
+                    $(item_html).insertBefore(".report_templete .table"+i+" .goods_total");
+                }
+            }
+            
+            
+            $.each(temp_json.Desc_Info, function(iii, info){
+                var item_html = "<li>"+info+"</li>";
+                
+                $(".report_templete .table"+i+" .desc_Info").append(item_html);
+            });    
+        }
+         
+        $(".content").append($(".report_templete").html());
+        
+        $(".report_templete .edit").html("");
+		$(".report_templete .desc_Info").html("");
+        $(".report_templete tr.inserted").remove();
+        $(".report_templete .sign_img").attr("src" , "");
+	}
+
+</script>

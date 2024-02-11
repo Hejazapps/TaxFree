@@ -1,0 +1,25 @@
+{
+    "data": [
+        {
+            "id": "ALL",
+            "en": "ALL",
+            "jp": "全体"
+        },
+        {
+            "id": "01",
+            "en": "Refund Before",
+            "jp": "還付前"
+        },
+        {
+            "id": "02",
+            "en": "Refund End",
+            "jp": "還付完了"
+        },
+        {
+            "id": "03",
+            "en": "Refund Cancel",
+            "jp": "還付解除"
+        }
+             ]
+}
+

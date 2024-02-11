@@ -1,0 +1,6 @@
+framework module AbbyyUI {
+  umbrella header "AbbyyUI.h"
+
+  export *
+  module * { export * }
+}
